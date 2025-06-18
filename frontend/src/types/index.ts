@@ -19,10 +19,9 @@ export interface UserStock {
 }
 
 export interface Subscription {
-  userId: string
-  status: 'trialing' | 'active' | 'canceled'
-  trialEndsAt?: Date
-  createdAt: Date
+  status: 'trialing' | 'active' | 'past_due' | 'canceled' | 'unpaid'
+  trial_ends_at?: string
+  current_period_end?: string
 }
 
 export interface StockSearchResult {

@@ -40,6 +40,14 @@ You can also run the stack using Docker:
 docker-compose up
 ```
 
+### Deployment
+
+The frontend is optimized for Vercel. After pushing to GitHub, create a new Vercel project and select the `frontend` directory as the root. Set the required environment variables from `.env.example` and Vercel will build using `npm ci`.
+
+For the backend, you can deploy to a provider like Render or Railway. Ensure the environment variables match your production database and Stripe configuration.
+
+All dependencies have been updated with `npm audit fix` to resolve known vulnerabilities.
+
 ## Project Structure
 - `frontend/` – React/Vite frontend with pages and components
 - `backend/` – Express API with authentication, stock selection and Stripe integration

@@ -41,10 +41,12 @@ const Account: React.FC = () => {
       {subscription ? (
         <div className="bg-white shadow rounded p-4">
           <p><strong>Status:</strong> {subscription.status}</p>
-          {subscription.trialEndsAt && (
-            <p><strong>Trial endet:</strong> {new Date(subscription.trialEndsAt).toLocaleDateString()}</p>
+          {subscription.trial_ends_at && (
+            <p><strong>Trial endet:</strong> {new Date(subscription.trial_ends_at).toLocaleDateString()}</p>
           )}
-          <p><strong>Nächste Zahlung:</strong> {new Date(subscription.current_period_end).toLocaleDateString()}</p>
+          {subscription.current_period_end && (
+            <p><strong>Nächste Zahlung:</strong> {new Date(subscription.current_period_end).toLocaleDateString()}</p>
+          )}
         </div>
       ) : (
         <p>Kein aktives Abonnement</p>
