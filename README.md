@@ -1,51 +1,48 @@
-# Test
+# AI Financial Newsletter
 
-This repository contains a simple full stack example with a React/Vite frontend and an Express backend.
+This project provides a fullstack example for an AI-powered financial newsletter. It includes a React/Vite + TypeScript frontend and an Express backend connected to PostgreSQL. Users can authenticate with Firebase, select stocks to follow, and purchase a subscription via Stripe.
 
 ## Prerequisites
 - Node.js 18+
 - npm
+- PostgreSQL
 
 ## Setup
 
-### Frontend
-1. Navigate to the `frontend` directory:
+### Backend
+1. Navigate to the `backend` directory and install dependencies:
    ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
+   cd backend
    npm install
    ```
-3. Start the development server:
+2. Copy `.env.example` to `.env` and adjust the values for your local setup.
+3. Start the server:
    ```bash
    npm run dev
    ```
-   The application will be available at `http://localhost:5173` by default.
+   The API will be available at `http://localhost:5000`.
 
-### Backend
-1. Navigate to the `backend` directory:
+### Frontend
+1. Navigate to the `frontend` directory and install dependencies:
    ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
+   cd frontend
    npm install
    ```
-3. Configure the MongoDB connection by setting the `MONGODB_URI` environment variable if needed.
-4. Start the server:
+2. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
-   The API will be available at `http://localhost:3000/api`.
+   The application will be available at `http://localhost:3000`.
+
+### Docker
+You can also run the stack using Docker:
+```bash
+docker-compose up
+```
 
 ## Project Structure
-- `frontend/` – React/Vite application
-  - `src/` – React components
-  - `public/` – static assets
-- `backend/` – Express server
-  - `routes/` – API route definitions
-  - `controllers/` – route controllers
-  - `config/` – database configuration
+- `frontend/` – React/Vite frontend with pages and components
+- `backend/` – Express API with authentication, stock selection and Stripe integration
+- `docker-compose.yml` – optional container setup
 
-This setup matches the instructions provided in the project documentation.
+This repository implements the features described in the project documentation including user registration, stock search, Stripe subscription and a PostgreSQL database schema.
